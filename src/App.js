@@ -7,9 +7,7 @@ function App(props) {
       <header className="App-header">
         <p>
           <code>{props.coin} PRICE</code> 
-        </p>
-        <img src={logo} className="App-logo" alt="logo" />
-       
+        </p>       
       </header>
     </div>
   );
