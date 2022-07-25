@@ -22,6 +22,8 @@ code {
 h1  {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
+  padding: auto;
 }
 
 h3  {
