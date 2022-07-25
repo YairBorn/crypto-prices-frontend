@@ -7,6 +7,16 @@ function LineChart() {
   const [coinsToDisplay, setCoinsToDislplay] = useState(["btc", "eth", "bnb"]);
   const apiURL = "http://127.0.0.1:4455/prices/";
   pullData = setCoinsToDislplay;
+  const Colors = {
+    btc: "rgb(247,147,26)",
+    eth: "rgb(60, 60, 61)",
+    bnb: "#f3ba2f",
+  };
+  const Symbols = {
+    bitcoin : "btc",
+    ethereum : "eth",
+    binanceCoin : "bnb",
+  }
 
   useEffect(() => {
     async function getPrices() {
@@ -35,30 +45,30 @@ function LineChart() {
     datasets: [],
   };
 
-  if (coinsToDisplay.includes("btc"))
+  if (coinsToDisplay.includes(Symbols.bitcoin))
     data.datasets.push({
-      label: "btc",
+      label: Symbols.bitcoin,
       data: Object.values(prices.btc),
-      backgroundColor: "rgb(247,147,26)",
-      borderColor: "rgb(247,147,26)",
+      backgroundColor: Colors.btc,
+      borderColor: Colors.btc,
       borderWidth: 1,
     });
 
-  if (coinsToDisplay.includes("eth"))
+  if (coinsToDisplay.includes(Symbols.ethereum))
     data.datasets.push({
-      label: "eth",
+      label: Symbols.ethereum,
       data: Object.values(prices.eth),
-      backgroundColor: "rgb(60, 60, 61)",
-      borderColor: "rgb(60, 60, 61)",
+      backgroundColor: Colors.eth,
+      borderColor: Colors.eth,
       borderWidth: 1,
     });
 
-  if (coinsToDisplay.includes("bnb"))
+  if (coinsToDisplay.includes(Symbols.binanceCoin))
     data.datasets.push({
-      label: "bnb",
+      label: Symbols.binanceCoin,
       data: Object.values(prices.bnb),
-      backgroundColor: "#f3ba2f",
-      borderColor: "#f3ba2f",
+      backgroundColor: Colors.bnb,
+      borderColor: Colors.bnb,
       borderWidth: 1,
     });
 
