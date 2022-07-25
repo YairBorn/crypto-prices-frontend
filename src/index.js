@@ -11,7 +11,9 @@ root.render(
     <div justify={"center"}>
     <CoinsToggleButtons pushData={LineChart.pullData}/>
     </div>
-    <LineChart coin={"btc"}/>
+    <div style={{ position: "relative", margin: "auto", width: "80vw" }}>
+    <LineChart />
+    </div>
   </React.StrictMode>
 );
 

@@ -26,18 +26,8 @@ function LineChart(props) {
     );
 
 
-  // take start of month, middle of the month and it's end
-  let labels = Object.keys(prices.btc).filter((value, index, Arr) => {
-    return (
-      value.substring(3, 5) === "15" ||
-      value.substring(3, 5) === "01" ||
-      value.substring(3, 5) === "30"
-    )
-  });
-
-
   var data = {
-    labels: labels,
+    labels: Object.keys(prices.btc),
     datasets: [],
   };
 
@@ -62,7 +52,7 @@ function LineChart(props) {
         radius: 0,
       },
     },
-    // responsive: true,
+    responsive: true,
     scales: {
       y: {
         // max : Math.max.apply(Math,Object.values(prices[props.coin])),
